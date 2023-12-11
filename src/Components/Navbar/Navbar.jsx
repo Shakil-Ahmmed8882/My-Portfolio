@@ -14,42 +14,55 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import WavingHandIcon from '@mui/icons-material/WavingHand';
+import WavingHandIcon from "@mui/icons-material/WavingHand";
 import { Link } from "react-router-dom";
-
 
 const drawerWidth = 240;
 const routes = [
-  { label: <WavingHandIcon sx={{ color: "blue"}}/>, path: "/" },
+  { label: <WavingHandIcon sx={{ color: "#F5420B" }} />, path: "/" },
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Projects", path: "/projects" },
-  { label: "Resume", path: "/resume" },
-  { label: "Skills", path: "/skills" },
-  { label: "Contact", path: "/contact" },
+  { label: "Contact", path: "contact" },
 ];
 
 function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [scrollPosition, setScrollPosition] = React.useState(0);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentPosition = window?.pageYOffset || 0; // Use optional chaining to prevent errors if window is undefined
+      setScrollPosition(currentPosition);
+    };
+  
+    if (typeof window !== 'undefined') {
+      window.addEventListener("scroll", handleScroll);
+  
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, [window]);
+  
+  const navbarColor = scrollPosition > 200 ? "red" : "transparent";
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
       <Divider />
       <List>
         {routes.map((item) => (
-          <ListItem key={item.label} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item.label} />
-            </ListItemButton>
-          </ListItem>
+          <Link key={item.label} to={item.path}>
+            <ListItem key={item.label} disablePadding>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary={item.label} />
+              </ListItemButton>
+            </ListItem>
+          </Link>
         ))}
       </List>
     </Box>
@@ -58,12 +71,22 @@ function Navbar(props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
-  return (
-    <Box sx={{ display: "flex"}}>
-      <CssBaseline />
-      <AppBar component="nav" elevation={0} sx={{ backgroundColor: "transparent", borderBottom: "none", color: "#000", }}>
+  const resumeLink = (
+    <a href="https://drive.google.com/file/d/1cMJ8ibImtfJ4MJjLrCPxpz97FFpvf7_n/view?usp=sharing">Resume</a>
+  );
 
-        {/* Set elevation={0} and borderBottom: "none" to remove the shadow and border */}
+  return (
+    <Box sx={{ display: "flex" }}>
+      <CssBaseline />
+      <AppBar
+        component="nav"
+        elevation={0}
+        sx={{
+          backgroundColor: navbarColor,
+          borderBottom: "none",
+          color: "#000",
+        }}
+      >
         <Toolbar>
           <IconButton
             color="inherit"
@@ -74,18 +97,14 @@ function Navbar(props) {
           >
             <MenuIcon />
           </IconButton>
-          
-        
-          <Box sx={{ display: { xs: "none", sm: "block",marginLeft: "5%"  } }}>
+          <Box sx={{ display: { xs: "none", sm: "block", marginLeft: "5%" } }}>
             {routes.map((item) => (
               <Link key={item.label} to={item.path}>
-                <Button sx={{ color: "#000" }}>
-                  {item.label}
-                </Button>
+                <Button sx={{ color: "#000" }}>{item.label}</Button>
               </Link>
             ))}
+            {resumeLink}
           </Box>
-         
         </Toolbar>
       </AppBar>
       <nav>

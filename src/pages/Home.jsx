@@ -6,14 +6,15 @@ const Home = () => {
   //#2D6BFF
   //#E0EEED
   return (
-    <div className=" w-full top-0 grid grid-cols-1  md:grid-cols-3">
-      <div className="col-span-2 w-full h-[80vh]">
+    <div className=" w-full top-0 grid grid-cols-1   md:grid-cols-3">
+      <div className="col-span-2 w-full h-[80vh] overflow-hidden">
             
         <Banner></Banner>
       </div>
       <div>
         <Sidebar></Sidebar>
       </div>
+      
     </div>
   );
 };
