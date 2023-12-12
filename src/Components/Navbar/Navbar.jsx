@@ -19,10 +19,11 @@ import { Link, NavLink } from "react-router-dom";
 
 const drawerWidth = 240;
 const routes = [
-  { label: <WavingHandIcon sx={{ color: "#F5420B" }} />, path: "/" },
+    { label: <WavingHandIcon id="logo" sx={{ color: "#F5420B" }} />, path: "/logo" },
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Projects", path: "/projects" },
+  { label: "Skills", path: "/skills" },
   { label: "Contact", path: "contact" },
 ];
 

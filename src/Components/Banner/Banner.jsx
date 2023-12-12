@@ -7,6 +7,10 @@ const Banner = () => {
   const resumeUrl =
     "https://drive.google.com/uc?export=download&id=1cMJ8ibImtfJ4MJjLrCPxpz97FFpvf7_n";
 
+  const githubLink = "https://github.com/Shakil-Ahmmed8882"; // Replace 'your-github-username' with your actual GitHub username
+  const linkedinLink = "https://www.linkedin.com/in/shakil-ahmmed-501aaa26a/"; // Replace 'your-linkedin-profile' with your LinkedIn profile URL
+  const email = "mailto:shakilahmmed8882@gmail.com"; // Replace 'your-email@example.com' with your email address
+
   const downloadResume = async () => {
     window.location.href = resumeUrl;
 
@@ -26,10 +30,10 @@ const Banner = () => {
       // Handle error
     }
   };
-
   return (
     <div className="w-full flex flex-col justify-center space-y-2">
-      {/* Title and description */}
+      <div className="absolute"></div>
+      <div></div>
       <TitleDescription
         title={"Shakil Ahmmed"}
         description={
@@ -37,20 +41,31 @@ const Banner = () => {
         }
       />
 
-      {/* Icons */}
+      {/* Icons with Links */}
       <div className="flex gap-3">
-        <GitHubIcon
-          style={{ fontSize: "40px" }}
-          className="bg-grayBg p-2 rounded-full cursor-pointer hover:bg-primaryColor transition-all duration-300"
-        />
-        <MarkEmailReadIcon
-          style={{ fontSize: "40px" }}
-          className="bg-grayBg p-2 rounded-full cursor-pointer hover:bg-primaryColor transition-all duration-300"
-        />
-        <LinkedInIcon
-          style={{ fontSize: "40px" }}
-          className="bg-grayBg p-2 rounded-full cursor-pointer hover:bg-primaryColor transition-all duration-300"
-        />
+        {/* GitHub Icon */}
+        <a href={githubLink} target="_blank" rel="noopener noreferrer">
+          <GitHubIcon
+            style={{ fontSize: "40px" }}
+            className=" p-1 rounded-full cursor-pointer  transition-all duration-300"
+          />
+        </a>
+
+        {/* Email Icon */}
+        <a href={email}>
+          <MarkEmailReadIcon
+            style={{ fontSize: "40px" }}
+            className=" p-1 rounded-full cursor-pointer  transition-all duration-300"
+          />
+        </a>
+
+        {/* LinkedIn Icon */}
+        <a href={linkedinLink} target="_blank" rel="noopener noreferrer">
+          <LinkedInIcon
+            style={{ fontSize: "40px" }}
+            className=" p-1 rounded-full cursor-pointer  transition-all duration-300"
+          />
+        </a>
       </div>
 
       {/* Download Resume Button */}

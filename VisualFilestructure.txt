@@ -1,0 +1,58 @@
+├── src
+│   ├── assets // images & other static assets
+│   ├── components // reusable React components  
+│   ├── hooks // custom React hooks
+│   ├── pages // page components
+│   ├── App.jsx 
+│   ├── index.css
+│   └── main.jsx
+├── .eslintrc.cjs
+├── index.html
+├── package.json
+├── postcss.config.cjs
+├── README.md
+├── tailwind.config.cjs
+└── vite.config.js
+
+
+
+https://debonair-part.surge.sh/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Project Live link: https://restos-748ac.web.app/
+GitHub client link: https://github.com/Shakil-Ahmmed8882/RestOS
+GitHub server link: https://github.com/Shakil-Ahmmed8882/RestOS-server-11
+
+Unique Feature:
+  - Impeccable Visual Design: The project stands out with a visually captivating and appealing design. Carefully crafted elements and aesthetically pleasing layouts enhance the user experience, making it visually engaging and inviting.
+  - Layout: I have meticulously paid attention to details to maintain typography, alignemt, white space, visual heirarchy , contrast so on. Still there are lots of things to improve but yes i have an organized plan to do it so.
+Unique Technology: I used Next Ui going beyond what was shown in the main course.
+
+Project Selling line: RestOs offers instant food solutions, enabling users to swiftly register, search, place orders, and make purchases hassle-free. It empowers users with the flexibility to monitor their order status, confirming or tracking pending orders conveniently. The platform grants visibility into purchased food items, ensuring a seamless, transparent experience. RestOs excels in delivering high-quality, affordable food while providing an effortless user interaction
+
+
+
+Project Live link: https://contestcraft-350e1.web.app/
+GitHub client link: https://github.com/Shakil-Ahmmed8882/ContestHub-client-12
+GitHub server link: https://github.com/Shakil-Ahmmed8882/ContestHub-server-12
+
+Unique Feature:
+  - Unique visual look,color combination and gif based on the section purpose.Sometimes verbal words are not enough to express but sir you are always welcome to visit and provide your valueable feedback to learn more.
+  - 
+Unique Technology: No.
+
+Imagine a digital family where everyone participates, showcases their creativity, and competes in contests. Winners shine on our homepage, inspiring others. With the admin's approval, become a contest creator, organizing engaging contests for others to join. Featured popular contests encourage participation, cultivating a community of creativity and recognition.
+
+
