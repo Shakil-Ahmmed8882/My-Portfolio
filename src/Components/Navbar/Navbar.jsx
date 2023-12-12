@@ -15,7 +15,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import WavingHandIcon from "@mui/icons-material/WavingHand";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const drawerWidth = 240;
 const routes = [
@@ -56,13 +56,13 @@ function Navbar(props) {
       <Divider />
       <List>
         {routes.map((item) => (
-          <Link key={item.label} to={item.path}>
+          <NavLink key={item.label} to={item.path}>
             <ListItem key={item.label} disablePadding>
               <ListItemButton sx={{ textAlign: "center" }}>
                 <ListItemText primary={item.label} />
               </ListItemButton>
             </ListItem>
-          </Link>
+          </NavLink>
         ))}
       </List>
     </Box>
@@ -99,9 +99,9 @@ function Navbar(props) {
           </IconButton>
           <Box sx={{ display: { xs: "none", sm: "block", marginLeft: "5%" } }}>
             {routes.map((item) => (
-              <Link key={item.label} to={item.path}>
+              <NavLink key={item.label} to={item.path}>
                 <Button sx={{ color: "#000" }}>{item.label}</Button>
-              </Link>
+              </NavLink>
             ))}
             {resumeLink}
           </Box>

@@ -9,3 +9,38 @@ body{
 html{
   scroll-behavior: smooth;
 }
+
+a.active{
+  position:relative
+}
+
+a.active::before{
+  content:"";
+  position: absolute;
+  width: 30px;
+  height: 4px;
+  margin-left: 0px;
+  bottom:-12px;
+  background-color: #F5420B;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: #000; 
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: -12px;
+  left: 10px;
+  background-color: #F5420B;
+  transition: width 0.3s ease; /* Adding transition for the width change */
+}
+
+a:hover::before {
+  width: 60%; /* When hovered, the width will be 100% (expanding from left to right) */
+}
