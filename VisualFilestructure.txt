@@ -15,8 +15,7 @@
 └── vite.config.js
 
 
-
-https://debonair-part.surge.sh/
+debonair-part.surge.sh
 
 
 

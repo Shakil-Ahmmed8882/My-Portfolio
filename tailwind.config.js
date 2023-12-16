@@ -7,6 +7,7 @@ export default {
       grayBg: "#D8DBE2",
       primaryText: "#fff",
       AccentYeallow: "#F6C016",
+      description_text: "#697379",
     },
     extend: {},
   },

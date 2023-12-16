@@ -1,16 +1,16 @@
 const About = () => {
   return (
     <div>
-      <div className="sm:flex max-w-screen-xl">
-        <div className="sm:w-1/2 p-10">
+      <div className="md:flex max-w-screen-xl">
+        <div className="md:w-1/2 p-10">
           <div className="image sticky top-20 object-center text-center">
-            <img src="https://i.imgur.com/WbQnbas.png" />
+            <img className="h-[300px] md:h-full w-full object-cover object-top" src="https://i.ibb.co/d0tzn9N/profile-Portfolio.jpg" />
           </div>
         </div>
      
         <>
           {/* component */}
-          <div className="bg-white">
+          <div className="bg-white project_parent">
             <div className="max-w-xl mx-auto p-8">
               <span className="text-gray-500 border-b-2 border-indigo-600 uppercase">
                 About Me
@@ -29,9 +29,9 @@ const About = () => {
                       <div className="relative flex items-start space-x-3">
                         <div>
                           <div className="relative px-1">
-                            <div className="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                            <div className="h-8 w-8  rounded-full ring-8 ring-[#f5420b65] flex items-center justify-center">
                               <svg
-                                className="text-white h-5 w-5"
+                                className=" h-5 w-5"
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
@@ -83,7 +83,7 @@ const About = () => {
                       <div className="relative flex items-start space-x-3">
                         <div>
                           <div className="relative px-1">
-                            <div className="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                            <div className="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-[#f5420b65] flex items-center justify-center">
                               <svg
                                 className="text-white h-5 w-5"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +144,7 @@ const About = () => {
                       <div className="relative flex items-start space-x-3">
                         <div>
                           <div className="relative px-1">
-                            <div className="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                            <div className="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-[#f5420b65]  flex items-center justify-center">
                               <svg
                                 className="text-white h-5 w-5"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -206,7 +206,7 @@ const About = () => {
                       <div className="relative flex items-start space-x-3">
                         <div>
                           <div className="relative px-1">
-                            <div className="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-white flex items-center justify-center">
+                            <div className="h-8 w-8 bg-blue-500 rounded-full ring-8 ring-[#f5420b65] flex items-center justify-center">
                               <svg
                                 className="text-white h-5 w-5"
                                 xmlns="http://www.w3.org/2000/svg"

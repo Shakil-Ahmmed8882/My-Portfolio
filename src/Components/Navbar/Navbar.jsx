@@ -14,12 +14,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import WavingHandIcon from "@mui/icons-material/WavingHand";
-import { Link, NavLink } from "react-router-dom";
+
+import pLogo from "../../assets/img/innerImg/PLogo.png";
+import { NavLink, useLocation } from "react-router-dom";
 
 const drawerWidth = 240;
 const routes = [
-    { label: <WavingHandIcon id="logo" sx={{ color: "#F5420B" }} />, path: "/logo" },
+  { label: <img src={pLogo} style={{ width: "30px" }} id="logo" /> ,path:"/home"},
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
   { label: "Projects", path: "/projects" },
@@ -30,32 +31,22 @@ const routes = [
 function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [scrollPosition, setScrollPosition] = React.useState(0);
+  const location = useLocation()
+  const homeRoute = location.pathname === '/'
+ 
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const currentPosition = window?.pageYOffset || 0; // Use optional chaining to prevent errors if window is undefined
-      setScrollPosition(currentPosition);
-    };
-  
-    if (typeof window !== 'undefined') {
-      window.addEventListener("scroll", handleScroll);
-  
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
-  }, [window]);
-  
-  const navbarColor = scrollPosition > 200 ? "red" : "transparent";
+ 
+
+ 
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Divider />
       <List>
+        
         {routes.map((item) => (
           <NavLink key={item.label} to={item.path}>
             <ListItem key={item.label} disablePadding>
@@ -73,7 +64,9 @@ function Navbar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   const resumeLink = (
-    <a href="https://drive.google.com/file/d/1cMJ8ibImtfJ4MJjLrCPxpz97FFpvf7_n/view?usp=sharing">Resume</a>
+    <a href="https://drive.google.com/file/d/1cMJ8ibImtfJ4MJjLrCPxpz97FFpvf7_n/view?usp=sharing">
+      Resume
+    </a>
   );
 
   return (
@@ -83,22 +76,21 @@ function Navbar(props) {
         component="nav"
         elevation={0}
         sx={{
-          backgroundColor: navbarColor,
+          backgroundColor: homeRoute?"transparent":"white",
           borderBottom: "none",
           color: "#000",
-        }}
-      >
+        }}>
         <Toolbar>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
-          >
+            sx={{ mr: 2, display: { sm: "none" } }}>
             <MenuIcon />
           </IconButton>
-          <Box sx={{ display: { xs: "none", sm: "block", marginLeft: "5%" } }}>
+          <Box
+            sx={{ display: { xs: "none", sm: "block" },marginLeft:{ lg:"66px",md:"0px"} }}>
             {routes.map((item) => (
               <NavLink key={item.label} to={item.path}>
                 <Button sx={{ color: "#000" }}>{item.label}</Button>
@@ -114,6 +106,7 @@ function Navbar(props) {
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
+          className="card"
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
@@ -123,8 +116,7 @@ function Navbar(props) {
               boxSizing: "border-box",
               width: drawerWidth,
             },
-          }}
-        >
+          }}>
           {drawer}
         </Drawer>
       </nav>

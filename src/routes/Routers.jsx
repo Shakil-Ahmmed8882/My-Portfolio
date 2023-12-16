@@ -17,6 +17,10 @@ import Skills from "../pages/Skills";
                   element:<Home></Home>
             },
             {
+                  path:"/home",
+                  element:<Home></Home>
+            },
+            {
                   path:"projects",
                   element:<Projects></Projects>
             },
