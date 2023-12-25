@@ -1,7 +1,7 @@
 import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 const resumeUrl =
-  "https://drive.google.com/uc?export=download&id=1cMJ8ibImtfJ4MJjLrCPxpz97FFpvf7_n";
+  "https://drive.google.com/uc?export=download&id=12To87qpGvjt5k6o9YMjRs5YHhn6C5xux";
 
 const Skills = () => {
   // Donwload resume start

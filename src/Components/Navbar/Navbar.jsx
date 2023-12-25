@@ -64,7 +64,7 @@ function Navbar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   const resumeLink = (
-    <a href="https://drive.google.com/file/d/1cMJ8ibImtfJ4MJjLrCPxpz97FFpvf7_n/view?usp=sharing">
+    <a href="https://drive.google.com/file/d/12To87qpGvjt5k6o9YMjRs5YHhn6C5xux/view?usp=sharing">
       Resume
     </a>
   );
